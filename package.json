@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/CFCode-git/Bravo-UI/issues"
   },
-  "homepage": "https://github.com/CFCode-git/Bravo-UI#readme"
+  "homepage": "https://github.com/CFCode-git/Bravo-UI#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
