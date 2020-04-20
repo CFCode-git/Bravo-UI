@@ -2,7 +2,7 @@
   <button class="b-button" :class="{[`icon-${iconPosition}`]:true}">
     <b-icon class="icon" v-if="icon" :name="icon"></b-icon>
     <div class="content">
-      <slot></slot>
+      <slot/>
     </div>
   </button>
 </template>
