@@ -7,4 +7,9 @@ Vue.component('b-icon',Icon)
 
 new Vue({
   el:'#app',
+  data:{
+    loading1:false,
+    loading2:false,
+    loading3:false
+  }
 })
