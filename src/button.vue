@@ -10,8 +10,11 @@
 </template>
 
 <script>
+  import Icon from './icon.vue';
   export default {
-    // props: ['icon', 'iconPosition']
+    components:{
+      'b-icon':Icon
+    },
     props: {
       icon: {},
       loading:{
