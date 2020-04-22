@@ -2,29 +2,31 @@ import Vue from 'vue'
 import Button from './button.vue'
 import Icon from './icon.vue'
 import ButtonGroup from './button-group.vue'
-Vue.component('b-button',Button)
-Vue.component('b-icon',Icon)
-Vue.component('b-button-group',ButtonGroup)
+
+Vue.component('b-button', Button)
+Vue.component('b-icon', Icon)
+Vue.component('b-button-group', ButtonGroup)
 
 new Vue({
-  el:'#app',
-  data:{
-    loading1:false,
-    loading2:false,
-    loading3:false
+  el: '#app',
+  data: {
+    loading1: false,
+    loading2: false,
+    loading3: false
   }
 })
 
 
 // 单元测试
 import chai from 'chai'
+
 const {expect} = chai
 
 {
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
-    propsData:{
-      icon:'settings'
+    propsData: {
+      icon: 'settings'
     }
   })
   vm.$mount()
@@ -37,9 +39,9 @@ const {expect} = chai
 {
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
-    propsData:{
-      icon:'settings',
-      loading:true
+    propsData: {
+      icon: 'settings',
+      loading: true
     }
   })
   vm.$mount()
@@ -54,14 +56,14 @@ const {expect} = chai
   document.body.appendChild(div)
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
-    propsData:{
-      icon:'settings',
+    propsData: {
+      icon: 'settings',
     }
   })
   vm.$mount(div)
   let svg = vm.$el.querySelector('svg')
   let {order} = window.getComputedStyle(svg)
- expect(order).to.eq("1")
+  expect(order).to.eq('1')
   vm.$el.remove()
   vm.$destroy()
 }
@@ -70,18 +72,20 @@ const {expect} = chai
   document.body.appendChild(div)
   const Constructor = Vue.extend(Button)
   const vm = new Constructor({
-    propsData:{
-      icon:'settings',
-      iconPosition:'right'
+    propsData: {
+      icon: 'settings',
+      iconPosition: 'right'
     }
   })
   vm.$mount(div)
   let svg = vm.$el.querySelector('svg')
   let {order} = window.getComputedStyle(svg)
-  expect(order).to.eq("2")
+  expect(order).to.eq('2')
   vm.$el.remove()
   vm.$destroy()
 }
+import spies from 'chai-spies'
+chai.use(spies)
 {
   // mock
   const Constructor = Vue.extend(Button)
@@ -90,11 +94,10 @@ const {expect} = chai
       icon: 'settings',
     }
   })
-  button.$mount()
-  button.$on('click', function () {
-    console.log(1)
-  })
+  vm.$mount()
+  let spy = chai.spy(function(){})
+  vm.$on('click', spy)
   let button = vm.$el
   button.click()
-
+  expect(spy).to.have.been.called()
 }
