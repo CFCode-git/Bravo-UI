@@ -12,6 +12,7 @@
 <script>
   import Icon from './icon.vue';
   export default {
+    name:'bravoButton',
     components:{
       'b-icon':Icon
     },

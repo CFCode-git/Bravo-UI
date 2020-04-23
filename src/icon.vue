@@ -8,6 +8,7 @@
   import './svg.js'
 
   export default {
+    name:'bravoIcon',
     props: ['name']
   }
 </script>
