@@ -47,43 +47,35 @@
 </style>
 <div id="app">
   <div style="border:1px solid black;">
-    <b-row>
-      <b-col>12</b-col>
-      <b-col>12</b-col>
+    <b-row gutter="20">
+      <b-col span="2"
+             :phone="{span:12}"
+             :ipad="{span:8}"
+             :narrowPc="{span:4}"
+             :pc="{span:2}"
+             :widePc="{span:1}"
+      >
+       1
+      </b-col>
+      <b-col span="20"
+             :phone="{span:12}"
+             :ipad="{span:16}"
+             :narrowPc="{span:20}"
+             :pc="{span:22}"
+             :widePc="{span:23}"
+      >
+        2
+      </b-col>
     </b-row>
     <b-row gutter="20">
-      <b-col>12</b-col>
-      <b-col>12</b-col>
+      <b-col span="4">1</b-col>
+      <b-col span="16" offset="4">2</b-col>
     </b-row>
     <b-row gutter="20">
-      <b-col>12</b-col>
-      <b-col>12</b-col>
-      <b-col>12</b-col>
-    </b-row>
-    <b-row gutter="20">
-      <b-col>12</b-col>
-      <b-col>12</b-col>
-      <b-col>12</b-col>
-      <b-col>12</b-col>
-    </b-row>
-    <b-row gutter="20">
-      <b-col span="2">12</b-col>
-      <b-col span="22">12</b-col>
-    </b-row>
-
-    <b-row gutter="20">
-      <b-col span="2">12</b-col>
-      <b-col span="20" offset="2">12</b-col>
-    </b-row>
-    <b-row gutter="20">
-      <b-col span="4">12</b-col>
-      <b-col span="16" offset="4">12</b-col>
-    </b-row>
-    <b-row gutter="20">
-      <b-col span="4">12</b-col>
-      <b-col span="4" offset="4">12</b-col>
-      <b-col span="8" offset="4">12</b-col>
-      </b-rowo>
+      <b-col span="4">2</b-col>
+      <b-col span="4" offset="4">2</b-col>
+      <b-col span="8" offset="4">2</b-col>
+      </b-row>
   </div>
 
 
