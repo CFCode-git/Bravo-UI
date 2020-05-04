@@ -66,7 +66,7 @@
         margin-left: ($n/24) * 100%;
       }
     }
-    @media (min-width: 577px) and (max-width: 768px) {
+    @media (min-width: 577px){
       $class-prefix: col-ipad-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
@@ -81,14 +81,14 @@
       }
     }
 
-    @media (min-width: 769px) and (max-width: 992px) {
-      $class-prefix: col-narrow-pc-;
+    @media (min-width: 769px){
+      $class-prefix: col-narrowPc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           width: ($n/24) * 100%;
         }
       }
-      $class-prefix: offset-narrow-pc-;
+      $class-prefix: offset-narrowPc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           margin-left: ($n/24) * 100%;
@@ -96,7 +96,7 @@
       }
     }
 
-    @media (min-width: 993px) and (max-width: 1200px) {
+    @media (min-width: 993px){
       $class-prefix: col-pc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
@@ -112,13 +112,13 @@
     }
 
     @media (min-width: 1201px) {
-      $class-prefix: col-wide-pc-;
+      $class-prefix: col-widePc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           width: ($n/24) * 100%;
         }
       }
-      $class-prefix: offset-wide-pc-;
+      $class-prefix: offset-widePc-;
       @for $n from 1 through 24 {
         &.#{$class-prefix}#{$n} {
           margin-left: ($n/24) * 100%;
