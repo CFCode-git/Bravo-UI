@@ -44,7 +44,7 @@
           ...this.classCreator(ipad, 'ipad-'),
           ...this.classCreator(narrowPc, 'narrowPc-'),
           ...this.classCreator(pc, 'pc-'),
-          ...this.classCreator(widePc, 'wideP c-'),
+          ...this.classCreator(widePc, 'widePc-'),
         ]
       }
     },
