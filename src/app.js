@@ -35,9 +35,16 @@ new Vue({
     loading3: false,
     message: 'hi'
   },
-  methods:{
-    showToast(){
-      this.$toast('我是 message2')
+  methods: {
+    showToast() {
+      this.$toast('我是 message2', {
+        closeButton: {
+          text: '知道了',
+          callback() {
+            console.log('用户知道了')
+          }
+        }
+      })
     }
   }
 })
