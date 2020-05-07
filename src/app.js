@@ -37,13 +37,8 @@ new Vue({
   },
   methods: {
     showToast() {
-      this.$toast('我是 message2', {
-        closeButton: {
-          text: '知道了', callback(toast) {
-            console.log('用户知道了')
-            toast.log()
-          }
-        }
+      this.$toast('很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字', {
+        enableHtml:false,
       })
     }
   }
