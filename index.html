@@ -28,9 +28,9 @@
       --border-color-hover: #666;
     }
 
-    #app {
-      margin: 20px;
-    }
+    /*#app {*/
+    /*  margin: 20px;*/
+    /*}*/
 
     body {
       font-size: var(--font-size);
@@ -44,32 +44,9 @@
 </head>
 <body>
 <style>
-.demo{
-  border: 1px solid #666;
-  height:100px;
-}
-  .sider{
-    background-color: #333;
-    width: 200px;
-  }
-  .header{
-    background: #999;
-    height:100px;
-  }
-  .footer{
-    background: #ccc;
-    height: 100px;
-  }
 </style>
 <div id="app">
-  <b-layout style="height: 100vh;">
-    <b-sider>sider</b-sider>
-    <b-layout>
-      <b-header>header</b-header>
-      <b-content>content</b-content>
-      <b-footer>footer</b-footer>
-    </b-layout>
-  </b-layout>
+  <button @click="showToast">click me</button>
 </div>
 <script src="./src/app.js"></script>
 </body>
