@@ -39,9 +39,9 @@ new Vue({
     showToast() {
       this.$toast('我是 message2', {
         closeButton: {
-          text: '知道了',
-          callback() {
+          text: '知道了', callback(toast) {
             console.log('用户知道了')
+            toast.log()
           }
         }
       })
