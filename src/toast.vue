@@ -1,5 +1,5 @@
 <template>
-  <div class="toast" ref="lineWrapper">
+  <div class="toast" ref="lineWrapper" :class="toastClasses">
     <div class="message">
       <slot v-if="!enableHtml"></slot>
       <div v-else v-html="$slots.default[0]"></div>
@@ -31,9 +31,16 @@
           }
         }
       },
-      enableHtml:{
-        type:Boolean,
-        default:false
+      enableHtml: {
+        type: Boolean,
+        default: false
+      },
+      position: {
+        type: String,
+        default: 'top',
+        validator(value) {
+          return ['top', 'bottom', 'middle'].indexOf(value) >= 0
+        }
       }
     },
     mounted() {
@@ -41,15 +48,15 @@
       this.execAutoClose()
     },
     methods: {
-      execAutoClose(){
+      execAutoClose() {
         if (this.autoClose) {
           setTimeout(() => {
             this.close()
           }, this.autoCloseDelay * 1000)
         }
       },
-      lineStyleUpdate(){
-        this.$nextTick(()=>{
+      lineStyleUpdate() {
+        this.$nextTick(() => {
           this.$refs.line.style.height = `${this.$refs.lineWrapper.getBoundingClientRect().height}px`
         })
       },
@@ -66,6 +73,13 @@
           this.closeButton.callback(this)
         }
       }
+    },
+    computed: {
+      toastClasses() {
+        return {
+          [`position-${this.position}`]: true
+        }
+      }
     }
   }
 </script>
@@ -75,7 +89,7 @@
   $toast-min-height: 40px;
   $toast-bg: rgba(0, 0, 0, .75);
   .toast {
-    position: fixed; top: 0; left: 50%; transform: translateX(-50%);
+    position: fixed;
     font-size: $font-size; line-height: 1.8; min-height: $toast-min-height;
     display: flex; align-items: center;
     background: $toast-bg;
@@ -83,17 +97,34 @@
     border-radius: 4px;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
     padding: 0 16px;
-    .message{
-      padding:8px 0;
+    left: 50%;
+
+
+    .message {
+      padding: 8px 0;
     }
+
     .close {
       padding-left: 16px;
       flex-shrink: 0;
     }
+
     .line {
       height: 100%;
       border-left: 2px solid #666;
       margin-left: 16px;
+    }
+    &.position-top{
+      top: 0;
+      transform: translateX(-50%);
+    }
+    &.position-bottom{
+      bottom:0;
+      transform: translateX(-50%);
+    }
+    &.position-middle{
+      top:50%;
+      transform: translate(-50%,-50%);
     }
   }
 

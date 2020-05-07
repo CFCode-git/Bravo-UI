@@ -37,8 +37,17 @@ new Vue({
   },
   methods: {
     showToast() {
-      this.$toast('很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字', {
+      this.$toast('你的智商需要充值', {
         enableHtml:false,
+        position:'middle',
+        closeButton:{
+          text:'已充值',
+          callback(){
+            console.log('他说已经充值智商了')
+          }
+        },
+        autoClose:false,
+        autoCloseDelay: 3
       })
     }
   }
