@@ -1,5 +1,4 @@
 import {describe, it} from 'mocha'
-// const expect = chai.expect;
 import 'chai/register-expect.js'
 import Vue from 'vue'
 import Input from '../src/input.vue'
