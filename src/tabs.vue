@@ -32,11 +32,13 @@
       }
     },
     mounted(){
+      if(this.$children.length === 0){
+        console && console.warn && console.warn('tabs只接受子组件tabs-head 和 tabs-body')
+      }
       this.$children.forEach((vm)=>{
         if(vm.$options.name === 'bTabsHead'){
           vm.$children.forEach((childVm)=>{
             if(childVm.$options.name === 'bTabsItem' && childVm.name === this.selected){
-              console.log(childVm.$el)
               this.eventBus.$emit('update:selected',this.selected,childVm)
             }
           })

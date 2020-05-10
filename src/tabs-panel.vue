@@ -27,6 +27,7 @@
       }
     },
     created() {
+      this.eventBus &&
       this.eventBus.$on('update:selected',(name)=>{
         this.active = name === this.name;
       })
@@ -37,7 +38,7 @@
 <style lang="scss">
   .tabs-panel{
     &.active{
-      background: red;
+      padding:1em;
     }
   }
 </style>
