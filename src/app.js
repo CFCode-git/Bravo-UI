@@ -12,6 +12,11 @@ import Content from './content.vue'
 import Footer from './footer.vue'
 import Toast from './toast.vue'
 import Plugin from './plugin.js'
+import Tabs from './tabs.vue'
+import TabsHead from './tabs-head.vue'
+import TabsBody from './tabs-body.vue'
+import TabsItem from './tabs-item.vue'
+import TabsPanel from './tabs-panel.vue'
 
 Vue.component('b-button', Button)
 Vue.component('b-icon', Icon)
@@ -26,14 +31,16 @@ Vue.component('b-footer', Footer)
 Vue.component('b-sider', Sider)
 Vue.component('b-toast', Toast)
 Vue.use(Plugin)
+Vue.component('b-tabs', Tabs)
+Vue.component('b-tabs-item', TabsItem)
+Vue.component('b-tabs-body', TabsBody)
+Vue.component('b-tabs-head', TabsHead)
+Vue.component('b-tabs-panel', TabsPanel)
 
 new Vue({
   el: '#app',
   data: {
-    loading1: false,
-    loading2: false,
-    loading3: false,
-    message: 'hi'
+    selectedTab:'sports'
   },
   methods: {
     showToast1(){

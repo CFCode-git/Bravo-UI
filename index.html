@@ -46,9 +46,24 @@
 <style>
 </style>
 <div id="app">
-  <button @click="showToast1">top</button>
-  <button @click="showToast2">middle</button>
-  <button @click="showToast3">bottom</button>
+  <b-tabs :selected.sync="selectedTab" direction="">
+    <b-tabs-head>
+      <template slot="actions">
+        <button>设置</button>
+      </template>
+      <b-tabs-item name="woman">
+        <b-icon name="settings"></b-icon>
+        美女
+      </b-tabs-item>
+      <b-tabs-item name="finance" disabled>财经</b-tabs-item>
+      <b-tabs-item name="sports">体育</b-tabs-item>
+    </b-tabs-head>
+    <b-tabs-body>
+      <b-tabs-panel name="woman">美女相关资讯</b-tabs-panel>
+      <b-tabs-panel name="finance">财经相关资讯</b-tabs-panel>
+      <b-tabs-panel name="sports">体育相关资讯</b-tabs-panel>
+    </b-tabs-body>
+  </b-tabs>
 </div>
 <script src="./src/app.js"></script>
 </body>
