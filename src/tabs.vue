@@ -31,8 +31,17 @@
         eventBus:this.eventBus
       }
     },
-    created(){
-
+    mounted(){
+      this.$children.forEach((vm)=>{
+        if(vm.$options.name === 'bTabsHead'){
+          vm.$children.forEach((childVm)=>{
+            if(childVm.$options.name === 'bTabsItem' && childVm.name === this.selected){
+              console.log(childVm.$el)
+              this.eventBus.$emit('update:selected',this.selected,childVm)
+            }
+          })
+        }
+      })
     }
   }
 </script>
